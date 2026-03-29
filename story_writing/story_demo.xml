@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="story_demo_01" model="story.story">
+            <field name="name">Hành Trình Bóng Tối</field>
+            <field name="writer">Nguyễn A</field>
+            <field name="category">fantasy</field>
+            <field name="published">True</field>
+        </record>
+
+        <record id="chapter_demo_01" model="story.chapter">
+            <field name="story_id" ref="story_demo_01"/>
+            <field name="sequence">1</field>
+            <field name="name">Khởi đầu</field>
+            <field name="content">Ngày ấy, bóng tối bắt đầu lan ra...</field>
+        </record>
+
+        <record id="chapter_demo_02" model="story.chapter">
+            <field name="story_id" ref="story_demo_01"/>
+            <field name="sequence">2</field>
+            <field name="name">Cánh cổng</field>
+            <field name="content">Cánh cổng cổ xưa dần mở ra...</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Story menu -->
+        <menuitem
+            id="story_parent"
+            name="Viết Truyện"
+            icon="STOCK_OPEN"/>
+
+        <menuitem
+            id="menu_story_parent"
+            name="Truyện"
+            parent="story_parent"/>
+
+        <menuitem
+            id="menu_story_list"
+            parent="menu_story_parent"
+            action="action_story"
+            name="Danh sách truyện"/>
+
+    </data>
+</openerp>

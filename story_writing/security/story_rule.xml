@@ -1,0 +1,12 @@
+<openerp>
+    <data>
+
+        <record id="rule_story_reader_published" model="ir.rule">
+            <field name="name">Only Published Stories</field>
+            <field name="model_id" ref="model_story_story"/>
+            <field name="groups" eval="[(4, ref('group_story_reader'))]"/>
+            <field name="domain_force">[('published','=',True)]</field>
+        </record>
+
+    </data>
+</openerp>

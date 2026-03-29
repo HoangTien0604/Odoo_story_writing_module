@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_story_chapter_tree">
+            <field name="name">story.chapter.tree</field>
+            <field name="model">story.chapter</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Chapters">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="story_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_story_chapter_form">
+            <field name="name">story.chapter.form</field>
+            <field name="model">story.chapter</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Chapter">
+                    <field name="story_id"/>
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="content"
+                           placeholder="Viết nội dung chương tại đây..."/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_story_chapter">
+            <field name="name">Chapters</field>
+            <field name="res_model">story.chapter</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

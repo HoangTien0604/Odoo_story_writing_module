@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- SEARCH -->
+        <record model="ir.ui.view" id="view_story_search">
+            <field name="name">story.search</field>
+            <field name="model">story.story</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Story Search">
+                    <field name="name"/>
+                    <field name="writer"/>
+                    <field name="category"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- TREE -->
+        <record model="ir.ui.view" id="view_story_tree">
+            <field name="name">story.tree</field>
+            <field name="model">story.story</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách truyện">
+                    <field name="name"/>
+                    <field name="writer"/>
+                    <field name="category"/>
+                    <field name="published"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM -->
+        <record model="ir.ui.view" id="view_story_form">
+            <field name="name">story.form</field>
+            <field name="model">story.story</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Story">
+                    <notebook>
+
+                        <page string="Thông tin">
+                            <field name="name"/>
+                            <field name="writer"/>
+                            <field name="category"/>
+                            <field name="published"/>
+                            <field name="published_date"/>
+                            <field name="synopsis"
+                                   placeholder="Viết tóm tắt hoặc cốt truyện..."/>
+                        </page>
+
+                        <page string="Các chương">
+                            <field name="chapter_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                </tree>
+                                <form>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="content"
+                                   placeholder="Viết nội dung chương tại đây..."/>
+                                </form>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION -->
+        <record model="ir.actions.act_window" id="action_story">
+            <field name="name">Danh sách truyện</field>
+            <field name="res_model">story.story</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

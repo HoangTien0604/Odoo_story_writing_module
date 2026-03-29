@@ -1,0 +1,72 @@
+<openerp>
+    <data>
+
+        <!-- TREE -->
+        <record id="view_story_reader_tree" model="ir.ui.view">
+            <field name="name">story.reader.tree</field>
+            <field name="model">story.story</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách truyện">
+                    <field name="name"/>
+                    <field name="writer"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- FORM STORY -->
+        <record id="view_story_reader_form" model="ir.ui.view">
+            <field name="name">story.reader.form</field>
+            <field name="model">story.story</field>
+            <field name="arch" type="xml">
+                <form string="Story">
+
+                    <field name="name" readonly="1"/>
+                    <field name="writer" readonly="1"/>
+                    <field name="category" readonly="1"/>
+                    <field name="synopsis" readonly="1"/>
+
+                    <notebook>
+                        <page string="Chapters">
+                            <field name="chapter_ids" nolabel="1">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- FORM CHAPTER -->
+        <record id="view_chapter_reader_form" model="ir.ui.view">
+            <field name="name">chapter.reader.form</field>
+            <field name="model">story.chapter</field>
+            <field name="arch" type="xml">
+                <form string="Chapter">
+                    <field name="name" readonly="1"/>
+                    <field name="sequence" readonly="1"/>
+                    <field name="content" readonly="1"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTION -->
+        <record id="action_story_reader" model="ir.actions.act_window">
+            <field name="name">Đọc truyện</field>
+            <field name="res_model">story.story</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- MENU -->
+        <menuitem id="menu_reader_root" name="Reader"/>
+        <menuitem id="menu_reader_story"
+                  name="Danh sách truyện"
+                  parent="menu_reader_root"
+                  action="action_story_reader"/>
+
+    </data>
+</openerp>

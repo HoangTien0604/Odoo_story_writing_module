@@ -1,0 +1,9 @@
+<openerp>
+    <data>
+
+        <record id="group_story_reader" model="res.groups">
+            <field name="name">Story Reader</field>
+        </record>
+
+    </data>
+</openerp>
